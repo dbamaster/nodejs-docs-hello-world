@@ -10,5 +10,12 @@ docker run --name helloworld -p 1337:1337 helloworld:$BUILD_NUMBER node /var/www
       }
     }
 
+    stage('Deliver') {
+      steps {
+        input 'Finished the CI part? (Click "Proceed" to continue)'
+        sh 'echo "This is a test"'
+      }
+    }
+
   }
 }
